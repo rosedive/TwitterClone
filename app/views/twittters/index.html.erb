@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<p id="notice"><%= notice %></p>
+
+<h1 style="text-align: center;">Tweets</h1>
+
+
+
+    <% @twittter.each do |twittter| %>
+   
+      <p style="text-align: center;"><%= twittter.content %></p>
+       <center><%= link_to 'Show', twittter, class:"link1" %>
+       <%= link_to 'Edit', edit_twittter_path(twittter),  class:"link2" %>
+        <%= link_to 'Destroy', twittter, method: :delete, data: { confirm: 'Are you sure?' },  class:"link3"%><br><br>
+   		</center>
+    <% end %>
+
+
+<br>
+<div class="footer">
+  <h2>All right Reserved@TweeterClone</h2>
+</div>
+
+</body>
+</html>

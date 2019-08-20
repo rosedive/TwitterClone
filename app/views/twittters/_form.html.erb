@@ -1,0 +1,21 @@
+<%= form_with(model: twittter, local: true) do |form| %>
+  <% if twittter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(twittter.errors.count, "error") %> prohibited this twittter from being saved:</h2>
+
+      <ul>
+      <% twittter.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= form.label :content %>
+    <%= form.text_area :content,class:"form-control",id:"exampleFormControlTextarea1",rows:'3' %><br>
+    <center>
+      <%= form.submit class:'link1' %>
+      <%= link_to 'Back', twittters_path, class:'link2' %>
+    </center>
+  </div>
+<% end %>
